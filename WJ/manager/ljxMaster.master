@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ljxMaster.master.cs" Inherits="manager_ljxMaster" %>
+
+<%@ Register Src="left.ascx" TagName="left" TagPrefix="uc1" %>
+<%@ Register Src="footer.ascx" TagName="footer" TagPrefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>宁波大学科学技术学院C#大作业后台管理</title>
+    <link href="../Scripts/base.css" type="text/css" rel="Stylesheet" />
+    <link href="../Scripts/pagecss.css" type="text/css" rel="Stylesheet" />
+    <script type="text/javascript" src="../Scripts/manager.js"></script>
+    <script type="text/javascript" src="../Scripts/comm.js"></script>
+    <script type="text/javascript" src="../Scripts/MyDialog.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <img alt="" src="../image/banner.JPG" height="200" width="100%" border="0" />
+    <div class="top" style="border-style: 0; padding: 0px; margin: 0px; border-width: 0px;
+        background-color: #9ed5f3; top: -5px; position: relative;">
+        <ul style="font-weight: bold; color: #008080">
+            <li>欢迎您,<%=accountsHtml %>
+            </li>
+            <li></li>
+            <li>|</li><li><a href="/Error/unlogin.aspx" style="font-weight: bold; color: #008080">
+                安全退出</a></li></ul>
+    </div>
+    <div class="main" >
+         
+        <table width="100%">
+            <tr>
+                <td valign="top" align="left" width="170px" style="background-color: #6699FF">
+                    <div>
+                       
+                            <uc1:left ID="left1" runat="server" />
+                       </div>
+                </td>
+                <td width="85%" valign="top" align="left" >
+                    <div class="right-content">
+                        <div class="right-content-url">
+                            <asp:ContentPlaceHolder ID="RightURL" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                        <div class="right-content-content">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="foot" style="bottom: auto; position: relative;" align="center">
+        <uc2:footer ID="footer1" runat="server" />
+    </div>
+    </form>
+</body>
+</html>
